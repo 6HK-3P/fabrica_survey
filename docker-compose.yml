@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=survey
+      - POSTGRES_PASSWORD=survey
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  api:
+    build: api
+    environment:
+      - DATABASE_NAME=survey
+      - DATABASE_USER=survey
+      - DATABASE_PASSWORD=survey
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+    depends_on:
+      - db
+    volumes:
+      - web-media:/api/media/
+      - web-staticfiles:/api/staticfiles/
+
+volumes:
+  db-data:
+  web-media:
+  web-staticfiles:

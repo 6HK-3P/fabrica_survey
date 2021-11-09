@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+django = "==3.1"
+django-polymorphic = "==3.0.0"
+
+djangorestframework = "==3.12"
+djangorestframework-simplejwt = "==4.6.0"
+drf-yasg = "==1.20.0"
+django-rest-polymorphic = "==0.1.9"
+drf-nested-routers = "==0.92.1"
+drf-writable-nested = "==0.6.3"
+
+psycopg2-binary = "==2.8.6"
+uwsgi = "==2.0.19.1"
+
+
+[requires]
+python_version = "3.9"
